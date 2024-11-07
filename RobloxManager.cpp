@@ -910,6 +910,6 @@ void RobloxManager::SetScriptContext(const RBX::DataModelType &dataModel, void *
 }
 
 bool RobloxManager::IsDataModelOpen(void *dataModel) {
-    const auto isOpen = reinterpret_cast<uintptr_t>(dataModel) + 0x561;
+    const auto isOpen = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(dataModel) + 0x569);
     return isOpen != 0;
 }
