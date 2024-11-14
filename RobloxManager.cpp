@@ -567,7 +567,7 @@ void RobloxManager::Initialize() {
 
     // We indeed love bandage fixes, dottik just somehow make the signature
     // To update this, search in studio dump for "[FLog::CloseDataModel] doCloseDataModel - %p" and the only xref is that function
-    this->m_mapRobloxFunctions["RBX::DataModel::doDataModelClose"] = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr)) + 0x22E1BF0);
+    this->m_mapRobloxFunctions["RBX::DataModel::doDataModelClose"] = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr)) + 0x2489480);
 
     this->m_mapHookMap["RBX::ScriptContext::resumeDelayedThreads"] = new void *();
     MH_CreateHook(this->m_mapRobloxFunctions["RBX::ScriptContext::resumeDelayedThreads"],
@@ -910,6 +910,6 @@ void RobloxManager::SetScriptContext(const RBX::DataModelType &dataModel, void *
 }
 
 bool RobloxManager::IsDataModelOpen(void *dataModel) {
-    const auto isOpen = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(dataModel) + 0x561);
+    const auto isOpen = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(dataModel) + 0x569);
     return isOpen != 0;
 }

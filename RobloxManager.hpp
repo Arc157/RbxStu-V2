@@ -127,15 +127,12 @@ namespace RbxStu {
          *  @remarks This function does not seem to require DataModels' pointer encryption.
          **/
         MakeSignature_FromIDA(RBX_DataModel_getStudioGameStateType,
-            "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC 40 57 48 83 EC 20 48 85 C9 74 1F 48 8B "
-            "79 50 48 85 FF 74 21 48 8B 4F 50 48 85 C9 74 08 E8 9E DB 3E FE 48 8B F8 48 85 FF 75 0E "
-            "B8 04 00 00 00 48 83 C4 20 5F C3 48 8B F9 48 89 5C 24 30 48 8B 5F 18 E8 BA 40 02 00 0F B7 93 84 03 "
-            "00 00 48 8B 5C 24 30 0F B7 88 84 03 00 00 0F B7 80 86 03 00 00 2B D1 3B D0 77 C4 48 81 C7 60 FE FF FF "
-            "74 BB 8B 87 78 04 00 00 48 83 C4 20 5F C3");
+            "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC 40 57 48 83 EC 20 48 85 C9 74 1F 48 8B 79 "
+            "50 48 85 FF 74 21 48 8B 4F 50 48 85 C9 74 08 E8 7E EB 27 FE 48 8B F8 48 85 FF 75 0E B8 04 "
+            "00 00 00 48 83 C4 20 5F C3 48 8B F9 48 89 5C 24 30 48 8B 5F 18 E8 FA 83 05 00");
 
         MakeSignature_FromIDA(RBX_DataModel_doDataModelClose,
-            "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 8B D9 E8 ? ? ? ? 48 85 C0 74 1B 80 B8 "
-            "61 05 00 00 00 75 12 48 8B 0D ? ? ? ? 48 85 C9 74 06 48 8B 01 FF 50 ? 48 8B 7B ? 48 85 FF 74 08 F0 FF 47 ? 48 8B 7B ?");
+            "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC 40 57 48 83 EC 20 48 85 C9 74 1F 48 8B 79 50");
 
         MakeSignature_FromIDA(RBX_Instance_removeAllChildren,
                               "48 89 5C 24 ? 57 48 83 EC ? 48 8B F9 48 8B 41 ? 48 85 C0 74 70 66 66 0F 1F 84 00 00 00 "
@@ -145,8 +142,11 @@ namespace RbxStu {
          *  @brief First function call in `RBX::Instance::removeAllChildren`.
          **/
         MakeSignature_FromIDA(RBX_Instance_remove,
-            "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 8B D9 E8 ? ? ? ? 48 85 C0 74 1B 80 B8 "
-            "61 05 00 00 00 75 12 48 8B 0D ? ? ? ? 48 85 C9 74 06 48 8B 01 FF 50 ? 48 8B 7B ? 48 85 FF 74 08 F0 FF 47 ? 48 8B 7B ?");
+            "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 8B D9 E8 ? ? ? ? "
+            "48 85 C0 74 1B 80 B8 69 05 00 00 00 75 12 48 8B 0D ? ? ? ? 48 85 C9 74 06 48 8B "
+            "01 FF 50 ? 48 8B 7B ? 48 85 FF 74 08 F0 FF 47 ? 48 8B 7B ? 4C 8B 73 ? 4C 89 74 24 ? "
+            "48 89 7C 24 ? 0F 57 C0 F3 0F 7F 44 24 ? 48 8D 44 24 ? 48 89 44 24 ? 45 33 C9 45 33 C0 "
+            "33 D2 48 8B CB E8 ? ? ? ?");
 
         MakeSignature_FromIDA(LuaVM_Load, "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D ? ? ? 48 81 EC ? ? ? "
                                           "? 4D 8B E1 49 8B D8 4C 8B EA");
